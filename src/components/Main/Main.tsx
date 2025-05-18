@@ -212,7 +212,7 @@ const Main = ({ selectedSong }: MainProps) => {
       </div>
       <p className="border-b-[1px] w-full mt-20 text-gray-300 dark:text-gray-800"></p>
 
-      <div className="mt-4 flex items-center justify-between w-full gap-6 px-4">
+      <div className="mt-4 flex items-center justify-between w-full gap-6 lg:px-4 px-1">
         <div className="flex-1 flex justify-start items-center h-8 xl:h-14 gap-1 px-4">
           {[...Array(12)].map((_, i) => (
             <div
@@ -246,13 +246,13 @@ const Main = ({ selectedSong }: MainProps) => {
         </div>
       </div>
 
-      <div className='px-4'>
+      <div className='lg:px-4 px-1'>
         <h2 className='capitalize font-bold text-xl font-sans dark:text-gray-300 text-gray-800 text-left mt-16'>Trending</h2>
-        <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-4 mx-auto">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4 gap-4 mx-auto mt-2">
           {songs.slice(0, 12).map((s, i) => (
             <img
               key={i}
-              src={s.artworkUrl100.replace('100x100', '250x250')}
+              src={s.artworkUrl100.replace('100x100', '280x280')}
               alt={s.trackName}
               onClick={() => setCurrentIndex(i)}
               className={`cursor-pointer rounded-lg transition-transform duration-200 hover:scale-105 ${i === currentIndex ? 'ring-4 ring-green-700' : ''}`}

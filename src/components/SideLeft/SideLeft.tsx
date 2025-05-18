@@ -10,7 +10,7 @@ import {
   SettingsIcon,
 } from 'lucide-react';
 import { HiBars3CenterLeft } from 'react-icons/hi2';
-import { CgClose } from 'react-icons/cg';
+// import { CgClose } from 'react-icons/cg';
 
 const menuItems = [
   { icon: <HomeIcon className="w-5 h-5" />, label: 'Home' },
@@ -30,9 +30,9 @@ const SideLeft = () => {
   }
 
   return (
-    <div>
+    <div className='hidden xl:block'>
       <div className='flex justify-between'>
-        <div className="flex items-center px-4  pt-8 pb-2">
+        <div className="flex items-center px-4  pt-0 lg:pt-8 pb-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -43,7 +43,7 @@ const SideLeft = () => {
           </svg>
           <h1 className='font-bold font-sans  text-3xl lg;text-4xl  text-green-700 drop-shadow-sm drop-shadow-green-700'>MUSIC</h1>
         </div>
-        <HiBars3CenterLeft className='xl:hidden mt-8  w-10 h-10 font-extrabold dark:text-gray-300' onClick={handleclick} />
+        <HiBars3CenterLeft className='xl:hidden  w-10 h-10 font-extrabold dark:text-gray-300' onClick={handleclick} />
       </div>
       <div className=" hidden xl:flex flex-col space-y-4 h-full pt-6 px-6 py-8 ">
         {menuItems.map((item, index) => (
@@ -56,7 +56,7 @@ const SideLeft = () => {
           </div>
         ))}
       </div>
-      {sideNav && (
+      {/* {sideNav && (
         <div
           className='fixed inset-0 bg-black/60 backdrop-blur-sm z-50'
           onClick={handleclick}
@@ -77,7 +77,7 @@ const SideLeft = () => {
             ))}
           </div>
         </div>
-      )}
+      )} */}
 
     </div>
   );
