@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
+  --background: #dd1d1d;
   --foreground: #171717;
 }
 
@@ -12,15 +13,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-wave {
+  animation: wave 1.2s ease-in-out infinite;
+  transform-origin: bottom; /* Ensures only the top moves */
+}
+.paused {
+  animation-play-state: paused; /* Stops animation when play is false */
 }
